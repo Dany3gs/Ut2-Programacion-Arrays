@@ -9,7 +9,7 @@ public class Ejercicio1 {
         int[] vector_numeros = new int[10];
 
         for (int i = 0; i < vector_numeros.length; i++) {
-            vector_numeros[i] = (int) (Math.random() * 10);
+            vector_numeros[i] = (int) (Math.random() * 10 + 1);
 
             int cuadrado = (int) Math.pow(vector_numeros[i], 2);
             int cubo = (int) Math.pow(vector_numeros[i], 3);
