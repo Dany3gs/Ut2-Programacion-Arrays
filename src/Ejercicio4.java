@@ -27,7 +27,7 @@ public class Ejercicio4 {
             }
         }
 
-        System.out.println("Las números indicadas son: ");
+        System.out.println("Las números indicados son: ");
         for (int i = 0; i < contador; i++) {
             if (i == contador -1 ) {
                 System.out.print(array[i]);
