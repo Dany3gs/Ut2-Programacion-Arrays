@@ -11,11 +11,14 @@ public class Ejercicio5 {
 
     public static void main(String[] args) {
 
+        // Importamos la clase Random ya que nos hace falta para rellenar los elementos como pide el ejercicio
         Random random = new Random();
 
         // Se usa valores de byte para no saturar la terminal con valores de int, que son muy altos, funcionaría
         // igual con un int.
-        // Con ""(byte) (random.nextInt(Byte.MAX_VALUE ) + 1)"" estámos descartando valores negativos y 0.
+
+        // Con ""(byte) (random.nextInt(Byte.MAX_VALUE ) + 1)"" estámos descartando valores negativos y 0 en la variable
+        // que uso para rellenar el array.
 
         byte numElementos = (byte) (random.nextInt(Byte.MAX_VALUE ) + 1);
 
@@ -23,15 +26,29 @@ public class Ejercicio5 {
 
         int[] arrayRandom = new int[numElementos];
 
-        // Rellenamos los elementos con números aleatorios
+        // Rellenamos los elementos del array con números aleatorios
         for (int i = 0; i < arrayRandom.length; i++) {
             int elemento = (byte) Math.abs(random.nextInt()); // Aquí sí pueden ser negativos o 0.
                 arrayRandom[i] = elemento;
         }
 
-       // Con el método sort de la clase Array nos ordena el array de menor a mayor.
-       Arrays.sort(arrayRandom);
+       // Una opción para ordenar los elementos de menor a mayor es con el método sort de la clase Array.
+       //Arrays.sort(arrayRandom);
 
+        // Otra forma es con el método conocido como burbuja, el cual va sustituyendo la posición de los elementos
+        // según la condición que le indiquemos.
+        for (int i = 0; i < arrayRandom.length; i++) {
+            for (int j = 0; j < arrayRandom.length - 1; j++) {
+                if (arrayRandom[j] > arrayRandom[j + 1]) {
+                    // Intercambio de valores
+                    int aux = arrayRandom[j];
+                    arrayRandom[j] = arrayRandom[j + 1];
+                    arrayRandom[j + 1] = aux;
+                }
+            }
+        }
+
+        // Imprimimos los elementos ya ordenados
        System.out.println("El orden de menor a mayor es:");
        for (int i = 0; i < arrayRandom.length; i++) {
             System.out.println(arrayRandom[i]);
