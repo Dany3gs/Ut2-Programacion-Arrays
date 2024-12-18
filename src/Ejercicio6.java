@@ -27,16 +27,17 @@ public class Ejercicio6 {
         };
 
         System.out.println("Indique un número del 1 al 12 para ver que mes es y cuantos días tiene dicho mes.");
-        int mes = sc.nextInt();
-        boolean numCorrecto = true;
-        for (int i = 0; i < meses.length && numCorrecto; i++) {
+        int mes = Integer.parseInt(sc.nextLine());
+
+        int i = 0;
+        while (i < meses.length) {
             if (mes == (i + 1)) {
                 System.out.println(meses[i]);
-                numCorrecto = false;
             } else if (mes > 12 || mes < 0){
                 System.out.println("Valor no válido, inténtelo de nuevo.");
                 mes = sc.nextInt();
             }
+            i++;
         }
     }
 }
