@@ -15,21 +15,21 @@ public class Ejercicio9 {
 
         Scanner sc = new Scanner(System.in);
 
-        double[] tempMax = {28, 30, 32, 34, 36};
-        double[] tempMin = {-2, 4, 8, -12, 22};
+        double[] tempMax = {28.7, 30.0, 32.7, 30.0, 32.7};
+        double[] tempMin = {-2.3, 4.0, 8, -12, 12};
 
         double media;
 
+        // Calculamos la media por día.
+        System.out.println("La temperatura media de cada día es: ");
+        System.out.println("------------------------------------");
         for (int i = 0; i < tempMax.length; i++) {
-              media = tempMax[i] + tempMin[i];
-              media /= 2;
-
-            System.out.println("La temperatura media de cada día es: " + media + " grados.");
+            media = (tempMax[i] + tempMin[i]) / 2;
+            System.out.println("Día " + (i + 1) + ": " + media + " grados.");
         }
 
         // Localizamos la menor temperatura del array minTemp.
         double menorTemp = tempMin[0];
-
 
         for (int i = 1; i < tempMin.length; i++) {
 
@@ -42,31 +42,34 @@ public class Ejercicio9 {
         // La mostramos en consola
         for (int i = 0; i < tempMin.length; i++) {
             if (tempMin[i] == menorTemp) {
-                System.out.println("El día con menor temperatura es: " + menorTemp + " grados.");
+                System.out.println("----------------------------------------------------------");
+                System.out.println("El día " + i + " es el día con menor temperatura: " + menorTemp + " grados.");
             }
         }
 
-
+        // Solicitamos valor para comparar
         System.out.println("------------------------");
         System.out.println("Indique una temperatura:");
 
         double temp = sc.nextDouble();
         boolean existe = false;
-        int indice = -1; // se inicializa en -1 para asegurar que no coincide con ninguna posición del array
+        double[] indice = new double[5]; // Se guardan valores que coincidan en nuevo array.
 
-
+        // Si el valor coincide, sustituimos valor.
         for (int i = 0; i < tempMax.length; i++) {
             if (tempMax[i] == temp) {
                 existe = true;
-                indice = i;
+                indice[i] = tempMax[i];
             }
         }
 
-        if (existe) {
-            System.out.println("La temperatura coincide con el día: " + (indice + 1));
-        } else {
-            System.out.println("No existe una temperatura con ese valor.");
+        // Imprimimos según cumpla la condición.
+        for (int i = 0; i < indice.length; i++) {
+            if (indice[i] == temp) {
+                System.out.println("La temperatura coincide con el día "+ (i + 1) + ": " + indice[i] + " grados.");
+            } else if (!existe){
+                System.out.println("No existe una temperatura con ese valor.");
+            }
         }
     }
 }
-//TODO pendiente comprobar que este correcto
