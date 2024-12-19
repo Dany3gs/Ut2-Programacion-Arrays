@@ -71,5 +71,8 @@ public class Ejercicio9 {
                 System.out.println("No existe una temperatura con ese valor.");
             }
         }
+
+        // Cerramos el Scanner
+        sc.close();
     }
 }
