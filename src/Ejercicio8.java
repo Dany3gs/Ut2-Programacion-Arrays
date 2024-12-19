@@ -42,6 +42,7 @@ public class Ejercicio8 {
         }
 
         //  Imprimimos los alumnos mayores de edad
+        System.out.println("--------------------------------");
         System.out.println("Los alumnos mayores de edad son:");
         System.out.println("--------------------------------");
 
@@ -51,13 +52,15 @@ public class Ejercicio8 {
             }
         }
 
-        // Encontramos la mayor edad sin ordenar las listas
+        // Se crea variable para guardar el alumno con mayor edad.
         int alumnoMayor = Collections.max(edades);
 
         // Imprimimos los alumnos con la mayor edad
+        System.out.println("---------------------------------------");
         System.out.println("El alumno o alumnos con mayor edad son:");
-        System.out.println("-------------------------------");
+        System.out.println("---------------------------------------");
 
+        // Buscamos los elementos de la lista con mismo valor a alumnoMayor, por si hay varios con la misma edad.
         for (int i = 0; i < edades.size(); i++) {
             if (edades.get(i) == alumnoMayor) {
                 System.out.println(nombres.get(i) + " con " + edades.get(i) + " años.");
