@@ -66,5 +66,8 @@ public class Ejercicio8 {
                 System.out.println(nombres.get(i) + " con " + edades.get(i) + " años.");
             }
         }
+
+        // Cerramos el Scanner
+        sc.close();
     }
 }
