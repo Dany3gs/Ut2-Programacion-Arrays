@@ -26,18 +26,20 @@ public class Ejercicio6 {
                 "El mes es Diciembre y tiene 31 días."
         };
 
-        System.out.println("Indique un número del 1 al 12 para ver que mes es y cuantos días tiene dicho mes.");
-        int mes = Integer.parseInt(sc.nextLine());
+        boolean entradaValida = false;
 
-        int i = 0;
-        while (i < meses.length) {
-            if (mes == (i + 1)) {
-                System.out.println(meses[i]);
-            } else if (mes > 12 || mes < 0){
+        // Comprobar si el valor es válido
+        while (!entradaValida) {
+            System.out.println("Indique un número del 1 al 12 para ver que mes es y cuantos días tiene dicho mes.");
+            int mes = sc.nextInt();
+
+            if (mes >= 1 && mes <= 12) {
+                System.out.println(meses[mes - 1]);
+                entradaValida = true;
+            } else {
                 System.out.println("Valor no válido, inténtelo de nuevo.");
-                mes = sc.nextInt();
             }
-            i++;
         }
+        sc.close();
     }
 }

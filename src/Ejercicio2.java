@@ -25,5 +25,8 @@ public class Ejercicio2 {
 
         System.out.println("Los elementos originales son: " + Arrays.toString(array));
         System.out.println("Los elementos a la inversa son: " + Arrays.toString(inverso));
+
+        // Cerramos el Scanner
+        sc.close();
     }
 }

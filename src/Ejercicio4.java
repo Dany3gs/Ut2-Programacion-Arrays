@@ -35,5 +35,8 @@ public class Ejercicio4 {
                 System.out.print(array[i] + ", ");
             }
         }
+
+        // Cerramos el Scanner
+        sc.close();
     }
 }

@@ -11,14 +11,14 @@ public class Ejercicio5 {
 
     public static void main(String[] args) {
 
-        // Importamos la clase Random ya que nos hace falta para rellenar los elementos como pide el ejercicio
+        // Importamos la clase Random, porque nos hace falta para rellenar los elementos como pide el ejercicio
         Random random = new Random();
 
         // Se usa valores de byte para no saturar la terminal con valores de int, que son muy altos, funcionaría
         // igual con un int.
 
-        // Con ""(byte) (random.nextInt(Byte.MAX_VALUE ) + 1)"" estámos descartando valores negativos y 0 en la variable
-        // que uso para rellenar el array.
+        // Con (byte) (random.nextInt(Byte.MAX_VALUE ) + 1) estámos descartando valores negativos y 0 en la variable
+        // que se usa para rellenar el array.
 
         byte numElementos = (byte) (random.nextInt(Byte.MAX_VALUE ) + 1);
 
@@ -28,7 +28,9 @@ public class Ejercicio5 {
 
         // Rellenamos los elementos del array con números aleatorios
         for (int i = 0; i < arrayRandom.length; i++) {
-            int elemento = (byte) Math.abs(random.nextInt()); // Aquí sí pueden ser negativos o 0.
+
+            // Generamos un número aleatorio del rango Byte (-128 a 127)
+            int elemento = (byte) random.nextInt();
                 arrayRandom[i] = elemento;
         }
 
@@ -40,6 +42,7 @@ public class Ejercicio5 {
         for (int i = 0; i < arrayRandom.length; i++) {
             for (int j = 0; j < arrayRandom.length - 1; j++) {
                 if (arrayRandom[j] > arrayRandom[j + 1]) {
+
                     // Intercambio de valores
                     int aux = arrayRandom[j];
                     arrayRandom[j] = arrayRandom[j + 1];

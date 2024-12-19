@@ -55,5 +55,8 @@ public class Ejercicio3 {
         System.out.println("La nota media es: " + total / notas.length);
         System.out.println("La nota máxima es: " + mayor);
         System.out.println("La nota menor es: " + menor);
+
+        // Cerramos el Scanner
+        sc.close();
     }
 }
