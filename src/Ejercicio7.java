@@ -25,11 +25,14 @@ public class Ejercicio7 {
             vector2[i] = sc.nextInt();
         }
 
-        System.out.println("Rellene vector 3:");
         for (int i = 0; i < vector3.length; i++) {
-            // hacer cálculo aquí
+            vector3[i] = vector1[i] + vector2[i];
         }
 
+        System.out.println("La suma de los elementos del vector1 y vector2 son: ");
+        for (int i = 0; i < vector3.length; i++) {
+            System.out.print(vector3[i] + " ");
+        }
 
     }
 }
