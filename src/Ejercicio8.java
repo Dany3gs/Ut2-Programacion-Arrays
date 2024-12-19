@@ -32,17 +32,24 @@ public class Ejercicio8 {
         String[] nombres = new String[50];
         int[] edades = new int[50];
         int contador = 0;
-
+        boolean salir = true;
         System.out.println("Indique su nombre y edad (introduzca '*' para finalizar):");
 
         // Rellenamos los arrays con los datos del usuario
-        while (true) {
+        while (salir) {
             System.out.print("Su nombre? ");
             String nombre = sc.nextLine();
 
             if (nombre.equals("*")) {
-                break;
+                salir = false;
+                continue;
             }
+            if (contador == 50) {
+                System.out.println("Se ha alcanzado el límite máximo de 100 alumnos.");
+                salir = false;
+                continue;
+            }
+
             nombres[contador] = nombre;
 
             System.out.print("Su edad? ");
@@ -51,11 +58,6 @@ public class Ejercicio8 {
             edades[contador] = edad;
 
             contador++;
-
-            if (contador == 50) {
-                System.out.println("Se ha alcanzado el límite máximo de 100 alumnos.");
-                break;
-            }
         }
 
         // Imprimimos los alumnos mayores de edad
