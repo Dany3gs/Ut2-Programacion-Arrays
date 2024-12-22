@@ -11,10 +11,10 @@ public class Ejercicio1 {
         for (int i = 0; i < vector_numeros.length; i++) {
             vector_numeros[i] = (int) (Math.random() * 10 + 1);
 
-            int cuadrado = (int) Math.pow(vector_numeros[i], 2);
-            int cubo = (int) Math.pow(vector_numeros[i], 3);
+            int cuadrado = vector_numeros[i] * vector_numeros[i];
+            int cubo = vector_numeros[i] * vector_numeros[i] * vector_numeros[i];
 
-            System.out.println("El cuadrado del número " +vector_numeros[i] + " es " + cuadrado + " y su cubo es " + cubo);
+            System.out.println("El número es " + vector_numeros[i] + ", su cuadrado es " + cuadrado + " y su cubo es " + cubo);
         }
     }
 }

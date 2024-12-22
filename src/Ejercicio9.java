@@ -15,12 +15,13 @@ public class Ejercicio9 {
 
         Scanner sc = new Scanner(System.in);
 
+        // Iniciamos dos array con temperatura Max y Min aleatorias.
         double[] tempMax = {28.7, 30.0, 32.7, 30.0, 32.7};
         double[] tempMin = {-2.3, 4.0, 8, -12, 12};
 
+        // Calculamos la media por día.
         double media;
 
-        // Calculamos la media por día.
         System.out.println("La temperatura media de cada día es: ");
         System.out.println("------------------------------------");
         for (int i = 0; i < tempMax.length; i++) {
@@ -43,7 +44,7 @@ public class Ejercicio9 {
         for (int i = 0; i < tempMin.length; i++) {
             if (tempMin[i] == menorTemp) {
                 System.out.println("----------------------------------------------------------");
-                System.out.println("El día " + i + " es el día con menor temperatura: " + menorTemp + " grados.");
+                System.out.println("El día " + (i + 1) + " es el día con menor temperatura: " + menorTemp + " grados.");
             }
         }
 
@@ -53,7 +54,7 @@ public class Ejercicio9 {
 
         double temp = sc.nextDouble();
         boolean existe = false;
-        double[] indice = new double[5]; // Se guardan valores que coincidan en nuevo array.
+        double[] indice = new double[5]; // Se guardan valores que coincidan en nuevo array por si hay más de un valor..
 
         // Si el valor coincide, sustituimos valor.
         for (int i = 0; i < tempMax.length; i++) {

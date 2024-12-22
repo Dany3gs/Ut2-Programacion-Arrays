@@ -18,30 +18,31 @@ public class Ejercicio7 {
         // Rellenamos los arrays
 
         //*******//
+        System.out.println("Rellene los valores para el vector 1:");
         System.out.println("Rellene vector 1:");
         for (int i = 0; i < vector1.length; i++) {
             vector1[i] = sc.nextInt();
         }
 
-        System.out.println("Rellene vector 2:");
+        System.out.println("Rellene los valores para el vector 2:");
         for (int i = 0; i < vector2.length; i++) {
             vector2[i] = sc.nextInt();
         }
 
+        // Calcular vector3 como la suma de vector1 y vector2
         for (int i = 0; i < vector3.length; i++) {
             vector3[i] = vector1[i] + vector2[i];
         }
         //*******//
 
-        System.out.println("La suma de los elementos del vector1 y vector2 son: ");
+        System.out.println("La suma de los elementos de vector1 y vector2 (vector3) es:");
 
-       // Imprimimos los elementos del vector3
+        // Mostrar el resultado de vector3
         for (int suma : vector3) {
             System.out.print(suma + " ");
         }
 
         // Cerramos el Scanner
         sc.close();
-
     }
 }

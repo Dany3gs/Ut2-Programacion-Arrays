@@ -8,13 +8,13 @@ siguientes datos:
 
 import java.util.Scanner;
 
-
 public class Ejercicio8 {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
+        // Se inicia array de nombres en 50 por tener una referencia
         String[] nombres = new String[50];
         int[] edades = new int[50];
         int contador = 0;
@@ -26,21 +26,29 @@ public class Ejercicio8 {
             System.out.print("Su nombre? ");
             String nombre = sc.nextLine();
 
+            // Se indica el carácter de finalización
             if (nombre.equals("*")) {
                 salir = false;
                 continue;
             }
+
+            // Se limita el bucle a la cantidad de elementos que se desee en el array.
             if (contador == 50) {
-                System.out.println("Se ha alcanzado el límite máximo de 100 alumnos.");
+                System.out.println("Se ha alcanzado el límite máximo de 50 alumnos.");
                 salir = false;
                 continue;
             }
 
             nombres[contador] = nombre;
 
+            //
             System.out.print("Su edad? ");
             int edad = sc.nextInt();
-            sc.nextLine(); // Limpiar el buffer
+            // Para que no se quede esperando respuesta la consola después de introducir la edad,
+            // hay que consumir la linea que queda cuando se hace enter, por eso hay que poner otra
+            // entrada que limpie el buffer, consumiendo ese salto de linea, así pasa a preguntar
+            // el nombre y no se queda esperando la consola.
+            sc.nextLine();
             edades[contador] = edad;
 
             contador++;

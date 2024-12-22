@@ -11,6 +11,7 @@ public class Ejercicio6 {
 
         Scanner sc = new Scanner(System.in);
 
+        // Indicamos el texto solicitado por elemento del array
         String[] meses = {
                 "El mes es Enero y tiene 31 días.",
                 "El mes es Febrero y tienes 28 días.",
@@ -33,6 +34,7 @@ public class Ejercicio6 {
             System.out.println("Indique un número del 1 al 12 para ver que mes es y cuantos días tiene dicho mes.");
             int mes = sc.nextInt();
 
+            // Imprimimos si es correcto y salimos de bucle
             if (mes >= 1 && mes <= 12) {
                 System.out.println(meses[mes - 1]);
                 entradaValida = true;

@@ -15,18 +15,22 @@ public class Ejercicio4 {
         boolean continua = true;
         int contador = 0;
 
-        System.out.println("Introduzca 10 números positivos o si desea parar indique un número negativo.");
+        System.out.println("Introduzca hasta 10 números positivos. O si desea parar, indique un número negativo.");
 
+        // Rellenamos el array mientras no sea indicado un valor negativo
         for (int i = 0; i < array.length && continua; i++) {
+            System.out.print("Número " + (i + 1) + ": ");
             array[i] = sc.nextInt();
+
             if (continua && array[i] >= 0) {
                 contador++;
-                System.out.println("Indique otro número, o uno negativo si desea salir.");
             }  else {
                 continua = false;
             }
         }
 
+        // Imprimimos los valores indicaos menos el último
+        System.out.println("--------------------------");
         System.out.println("Las números indicados son: ");
         for (int i = 0; i < contador; i++) {
             if (i == contador -1 ) {

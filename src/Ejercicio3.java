@@ -12,7 +12,7 @@ public class Ejercicio3 {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Indique las notas obtenidas.");
+        System.out.println("Indica las 5 notas obtenidas (valores entre 0 y 10):");
 
         int[] notas = new int[5];
         double total = 0;
@@ -20,8 +20,10 @@ public class Ejercicio3 {
         for (int i = 0; i < notas.length; i++) {
             boolean notaValida = false;
                 while (!notaValida) {   //mientras no sea válido el valor introducido no salimos de bucle while
-                    notas[i] = sc.nextInt(); //rellenamos array desde teclado
+                    System.out.print("Nota " + (i + 1) + ": ");
+                    notas[i] = sc.nextInt();
 
+                    //Comprobamos si es válido el valor introducido
                 if (notas[i] < 0 || notas[i] > 10) {
                     System.out.println("Indique un valor entre 0 y 10");
                 } else {
@@ -32,6 +34,7 @@ public class Ejercicio3 {
         }
 
         //Imprimimos los elementos separados por ", ". él último no.
+        System.out.println("-------------------------");
         System.out.println("Las notas indicadas son: ");
         for (int i = 0; i < notas.length; i++) {
             if (i == notas.length -1 ) {
@@ -41,11 +44,13 @@ public class Ejercicio3 {
             }
         }
 
+        // Localizamos la nota mayor
         int mayor = notas[0];
         for (int i = 1; i < notas.length; i++) {
             mayor = Math.max(mayor,notas[i]);
         }
 
+        // Localizamos la nota menor
         int menor = notas[0];
         for (int i = 1; i < notas.length; i++) {
             menor = Math.min(menor, notas[i]);
